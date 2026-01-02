@@ -11,36 +11,41 @@ import static se.maxm.temporallab.temporal.CloseMeetingDetailWorkflow.TASK_QUEUE
 public class CloseMeetingActivitiesImpl implements CloseMeetingActivities {
     @Override
     public void sendMailToCustomer(MeetingDetail meetingDetail) {
-        sov(2000);
-        System.out.println("logging sendMailToCustomer");
+        System.out.println("starting sendMailToCustomer");
+        sov(3000);
+        System.out.println("finished sendMailToCustomer");
     }
 
     @Override
     public void createPdf(MeetingDetail meetingDetail) {
-        sov(2000);
-        System.out.println("logging createPdf");
+        System.out.println("starting createPdf");
+        sov(10000);
+        System.out.println("finished createPdf");
     }
 
     @Override
     public void lockSuitability(MeetingDetail meetingDetail) {
-        sov(2000);
-        System.out.println("logging lockSuitability");
+        System.out.println("starting lockSuitability");
+        sov(5000);
+        System.out.println("finished lockSuitability");
     }
 
     @Override
     public void sendAmlMail(MeetingDetail meetingDetail) {
-        sov(2000);
-        System.out.println("logging sendAmlMail");
+        System.out.println("starting sendAmlMail");
+        sov(3000);
+        System.out.println("finished sendAmlMail");
     }
 
     @Override
     public void createFactSheet(MeetingDetail meetingDetail) {
-        sov(2000);
+        sov(10000);
         System.out.println("logging createFactSheet");
     }
+
     private static void sov(long millis) {
         try {
-             Thread.sleep(100);
+             Thread.sleep(millis);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
